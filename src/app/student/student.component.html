@@ -1,0 +1,37 @@
+<div class="container">
+  <br>
+  <h2> Danh sách sinh viên</h2>
+  <br>
+  <form>
+    <input type="search" (ngModelChange)="timSV(key.value)" #key="ngModel" ngModel name="key" id="searchName"
+      class="form-control mr-sm-2" placeholder="Tìm SV" required>
+  </form>
+
+  <table id="customers" class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th>Mã SV</th>
+        <th>Họ và tên</th>
+        <th>Ngày sinh</th>
+        <th>Giới tính</th>
+        <th>Tỉnh</th>
+        <th>Mã lớp</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tr *ngFor="let student of students">
+      <td>{{student?.masv}}</td>
+      <td>{{student?.hodem}} {{student.ten}}</td>
+      <td>{{student?.ngaysinh}}</td>
+      <td>{{student?.gioitinh}}</td>
+      <td>{{student?.tinh}}</td>
+      <td>{{student?.malop}}</td>
+      <td>
+        <button class="btn btn-success" (click)="suaSV(student.masv)">Sửa</button>
+        <button class="btn btn-danger" (click)="xoaSV(student.masv)">Xóa</button>
+      </td>
+    </tr>
+  </table>
+  <button pButton type="button" class="button" (click)="themSV()">Thêm SV</button>
+</div>
+
