@@ -1,5 +1,5 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
-import { ServerHttpService } from './Service/server-http.service';
+import { ServerHttpService } from './service/server-http.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

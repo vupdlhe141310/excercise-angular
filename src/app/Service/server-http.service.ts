@@ -1,45 +1,47 @@
-import { Students } from '../models/Students';
+import { Students } from '../models/Student';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { throwError } from 'rxjs/internal/observable/throwError';
-import { catchError, map, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class ServerHttpService {
-//thong bao kieu du lieu lay ve trao doi la json
+
   private httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
     }),
   };
-//dinh nghia dia chi server
-private api = 'http://localhost:8080/';
+
+//private api = 'https://api-truongcongtoan.herokuapp.com/api/students';
+private api = 'localhost:8080/api/sv';
 
 //khoi tao httpclient
 constructor(private httpClient: HttpClient) {}
 
 public getSV() {
-  return this.httpClient.get<any>(this.api + '/api/sv', this.httpOptions);
+
+  return this.httpClient.get<any>(this.api, this.httpOptions);
 }
 
 public addSV(data: any){
-  return this.httpClient.post<any>(this.api + '/api/sv',data, this.httpOptions);
+  return this.httpClient.post<any>(this.api, data, this.httpOptions);
 }
 
-public deleteSV(studentId: any) {
-  return this.httpClient.delete<any>(this.api + '/api/sv'+ studentId);
+public deleteSV(masv: string) {
+  return this.httpClient.delete<any>(this.api + '/'+ masv);
 }
 
-public getSVByMaSV(studentId: any) {
-  return this.httpClient.get<any>(this.api + '/api/sv'+ studentId, this.httpOptions);
+public getSVByMaSV(masv: string) {
+  return this.httpClient.get<any>(this.api + '/'+ masv, this.httpOptions);
 }
 
-public updateSV(studentId: string, data: Students) {
-  return this.httpClient.put<any>(this.api + '/api/sv'+ studentId, data, this.httpOptions);
+public updateSV(masv: string, data: Students) {
+  return this.httpClient.put<any>(this.api + '/'+ masv, data, this.httpOptions);
 }
-
+public getSVNu(maLop: string) {
+  return this.httpClient.get<any>('localhost:8080/api/getsvnu/'+ maLop, this.httpOptions);
+}
 
 }

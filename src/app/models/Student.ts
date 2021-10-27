@@ -1,9 +1,9 @@
 export interface Students{
     masv:string;
-    hodem:string;
+    hoDem:string;
     ten:string;
-    ngaysinh:Date;
-    gioitinh:string;
+    gioiTinh:string;
+    ngaySinh:Date;
     tinh:string;
-    malop:string;
+    maLop:string;
 }

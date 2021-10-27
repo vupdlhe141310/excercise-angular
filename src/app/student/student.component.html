@@ -21,11 +21,11 @@
     </thead>
     <tr *ngFor="let student of students">
       <td>{{student?.masv}}</td>
-      <td>{{student?.hodem}} {{student.ten}}</td>
-      <td>{{student?.ngaysinh}}</td>
-      <td>{{student?.gioitinh}}</td>
+      <td>{{student?.hoDem}} {{student.ten}}</td>
+      <td>{{student?.ngaySinh}}</td>
+      <td>{{student?.gioiTinh}}</td>
       <td>{{student?.tinh}}</td>
-      <td>{{student?.malop}}</td>
+      <td>{{student?.maLop}}</td>
       <td>
         <button class="btn btn-success" (click)="suaSV(student.masv)">Sửa</button>
         <button class="btn btn-danger" (click)="xoaSV(student.masv)">Xóa</button>
