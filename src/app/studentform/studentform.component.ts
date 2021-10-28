@@ -60,10 +60,8 @@ public masv = '';
 
 
   public luuSV() {
-    if (this.masv.length > 1) {
-      this.serverHttp
-        .updateSV(this.masv, this.createSV())
-        .subscribe((data) => {
+    if (this.masv != '') {
+      this.serverHttp.updateSV(this.masv, this.createSV()).subscribe((data) => {
           this.router.navigate(['student']);
         });
     } else {

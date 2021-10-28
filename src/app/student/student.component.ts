@@ -47,7 +47,7 @@ export class StudentComponent implements OnInit {
     const newStudents: Students[] = [];
 
     this.students.forEach(sv => {
-      if (sv.masv.toLowerCase().indexOf(key.toLowerCase()) != -1 || sv.maLop.toLowerCase().indexOf(key.toLowerCase()) != -1) {
+      if (sv.masv.indexOf(key) != -1 || sv.maLop.indexOf(key) != -1) {
         newStudents.push(sv)
       }
     });

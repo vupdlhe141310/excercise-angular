@@ -14,7 +14,6 @@ export class ServerHttpService {
     }),
   };
 
-//private api = 'https://api-truongcongtoan.herokuapp.com/api/students';
 private api = 'localhost:8080/api/sv';
 
 //khoi tao httpclient
